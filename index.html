@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Shapes by spinal action</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <meta name="description" content="A list of asanas classified by spinal action">
+  
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+    		<div class="col-md-12">
+    			<div class="jumbotron">
+    				<h2>Shapes by spinal action</h2><br>
+    				<p>
+              This is probably a bit unnecessary...
+            </p>
+    			</div><!--jumbotron ends-->
+    		</div><!--col-md-12 ends-->
+      </div><!--row ends-->
+    
+    <div class="row" style="width:100%;padding:3% 3% 3% 6%;">
+      <div class="row postlist" style="font-size: 0.9rem;">
+
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script type='text/javascript'>
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1BBANZKa7NA8g0DR1g1arOlWyqTHX4K4fTnxY1QzIggI/edit?usp=sharing';
+
+    function init() {
+      Tabletop.init( { key: publicSpreadsheetUrl,
+                       callback: showInfo,
+                       simpleSheet: true } )
+    }
+    var counter = 1;
+    function showInfo(data, tabletop) {
+
+            for(var i=0;i<data.length; i++){
+              $('.postlist').append('<div class="col-md-4"><h4 style="text-align:center;">'
+                +data[i].sanskrit+'</h4><p><b>Name:</b> '+ data[i].english + '</p><p><b>Starting position: </b> '+ data[i].start + '</p><p><b>Primary action: </b> '+ data[i].primary + '</p><p><b>Secondary action: </b> '+ data[i].secondary + '</p><p><b>Level: </b> '+ data[i].level + '</p></div>');
+                if (counter == 3){
+
+                }
+            }
+
+      //alert('Successfully processed!')
+      console.log(data);
+    }
+
+    window.addEventListener('DOMContentLoaded', init)
+  </script>
+
+</body>
+
+</html>
