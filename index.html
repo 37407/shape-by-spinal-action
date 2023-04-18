@@ -33,7 +33,6 @@
     </div>
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-  <script type='text/javascript'>
     var publicSpreadsheetUrl = 'https://sheets.googleapis.com/v4/spreadsheets/1BBANZKa7NA8g0DR1g1arOlWyqTHX4K4fTnxY1QzIggI/values/Sheet1?alt=json&key=AIzaSyBZFvC7z4oYswr5iQvIclLwfp0G3rX_lmo';
 
     function init() {
@@ -42,11 +41,17 @@
                        simpleSheet: true } )
     }
     var counter = 1;
+
     function showInfo(data, tabletop) {
 
             for(var i=0;i<data.length; i++){
-              $('.postlist').append('<div class="col-md-4"><h4 style="text-align:center;">'
-                +data[i].sanskrit+'</h4><p><b>Name:</b> '+ data[i].english + '</p><p><b>Starting position: </b> '+ data[i].start + '</p><p><b>Primary action: </b> '+ data[i].primary + '</p><p><b>Secondary action: </b> '+ data[i].secondary + '</p><p><b>Level: </b> '+ data[i].level + '</p></div>');
+              $('.postlist').append('<div class="col-md-4">
+                <h4 style="text-align:center;">'+data[i].sanskrit+'</h4>
+                <p><b>Name:</b> '+data[i].english+'</p>
+                <p><b>Starting position: </b> '+data[i].start+'</p>
+                <p><b>Primary action: </b> '+data[i].primary+'</p>
+                <p><b>Secondary action: </b> '+data[i].secondary+'</p>
+                <p><b>Level: </b> '+data[i].level+'</p></div>');
                 if (counter == 3){
 
                 }
